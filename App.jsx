@@ -22,7 +22,7 @@ const App = () => {
   ];
 
   const handleLogin = (e) => {
-    e.preventDefault();/*ممنوع الفورم يعاود يحمل الصفحة منين كيتبعث (preventDefault). */
+    e.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
@@ -34,19 +34,16 @@ const App = () => {
     }
   };
 
-  /*const handleLogout = () => {
-    setIsLoggedIn(false);
-  };*/
+  
 
   const handleContactSubmit = (e) => {
-    e.preventDefault();/*🔹 e.preventDefault()
-    باش الفورم مايديرش refresh للصفحة منين المستخدم يضغط على "Send"*/ 
+    e.preventDefault(); 
     setFormSubmitted(true);
     nameRef.current.value = '';
     emailRef.current.value = '';
-    messageRef.current.value = '';/* كنمسحو البيانات لي كانت مكتوبة في الخانات (الاسم، الإيميل، الرسالة). */
+    messageRef.current.value = 
     setTimeout(() => setFormSubmitted(false), 3000);
-  };/* بعد 3 ثواني (3000 ميلي ثانية)، كنديرو false فـ formSubmitted باش ترجع الفورم تبان من جديد. */
+  };
 
   const renderView = () => {
     switch(currentView) {
